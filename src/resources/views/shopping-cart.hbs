@@ -1,0 +1,65 @@
+<section class="generic-banner relative">	
+	<div class="container">
+		<div class="row height align-items-center justify-content-center">
+			<div class="col-lg-10">
+				<div class="generic-banner-content">
+					<h2 class="text-white">Our technology products</h2>
+					<p class="text-white">It won’t be a bigger problem to find one device lover in your <br> neighbor. Since the introduction of E Commerce Shop.</p>
+				</div>							
+			</div>
+		</div>
+	</div>			
+</section>		
+<!-- End banner Area -->
+
+{{!-- Shopping Cart --}}
+<section class="service-area section-gap">
+	<div class="container">
+
+		{{#if products}}
+		<div class="row">
+			<div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+
+				{{#each products}}
+				<ul class="list-group">
+					<ul class="list-group-item">
+						<span class="font-weight-bold"><bold>{{this.item.name}}</bold></span>
+						<span class="badge bg-success">${{this.price}}</span>
+						<div class="btn-group">
+							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Reduce by 1</a></li>
+								<li><a class="dropdown-item" href="#">Remove All</a></li>
+							</ul>
+						</div>
+						<span class="badge bg-secondary">{{this.qty}}</span>
+					</ul>
+				</ul>	
+				{{/each}}
+
+			</div>
+		</div>
+
+		<div class="row margin-top-item">
+			<div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+				<h5>Total: {{totalPrice}} </h5>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+				<button type="button" class="btn btn-success">Checkout</button>
+			</div>
+		</div>
+		{{ else}}
+		<div class="row margin-top-item">
+			<div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+				<h2>No items in Cart</h2>
+			</div>
+		</div>
+		{{/if}}
+
+	</div>
+</section>
+
+		
