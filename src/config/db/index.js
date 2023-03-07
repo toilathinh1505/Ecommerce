@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 
 async function connect() {
     
-    const URI = 'mongodb+srv://admin:XMnuIU05kyjV2x7r@e-commerce.asumm.mongodb.net/e_commerce?retryWrites=true&w=majority';
+    const URI = 'mongodb+srv://toilathinh150503:15052003@cluster0.7hyrgeq.mongodb.net/?retryWrites=true&w=majority';
 
     try {
-        await mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true});
+        mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true});
         console.log(`DB connected successfully`)
     } catch (error) {
         console.log(`Connect failed !!! `)
