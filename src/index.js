@@ -6,10 +6,17 @@ const session = require('express-session')
 const flash = require('connect-flash')
 const MongoStore = require('connect-mongo')
 const mongoose = require('mongoose')
+const methodOverride = require('method-override')
 
 require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(methodOverride('_method'))
+
+// Middleware
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 // Shopping Cart
 app.use(session({
@@ -17,7 +24,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://admin:XMnuIU05kyjV2x7r@e-commerce.asumm.mongodb.net/e_commerce?retryWrites=true&w=majority'
+        mongoUrl: 'mongodb+srv://toilathinh150503:15052003@cluster0.7hyrgeq.mongodb.net/?retryWrites=true&w=majority'
      }), 
     cookie: { maxAge: 180 * 60 * 1000 }
 }))

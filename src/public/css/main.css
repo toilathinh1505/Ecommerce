@@ -2896,3 +2896,15 @@ h6 {
 .switch-wrap p {
   margin: 0;
 }
+
+.set-color-font {
+  color: #478eff;
+}
+
+.padding-form-add {
+  padding: 0 20px;
+}
+
+.align-item-right {
+  float: right;
+}
